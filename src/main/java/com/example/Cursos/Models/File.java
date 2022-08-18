@@ -1,11 +1,11 @@
 package com.example.Cursos.Models;
 
-public class Archivo {
+public class File {
     private String nombre;
     private String url;
 
     
-    public Archivo(String nombre, String url) {
+    public File(String nombre, String url) {
         this.nombre = nombre;
         this.url = url;
     }
