@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Planificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private int id;
     private String nombre_curso;
     private String docente;
     private Date fecha_inicio;
@@ -27,7 +27,7 @@ public class Planificacion {
 
   
 
-    public Planificacion(String id, String nombre_curso, String docente, Date fecha_inicio, Date fecha_fin,
+    public Planificacion(int id, String nombre_curso, String docente, Date fecha_inicio, Date fecha_fin,
             String horario, String estado, String documento) {
         this.id = id;
         this.nombre_curso = nombre_curso;
@@ -55,17 +55,17 @@ public class Planificacion {
 
 
 
-    public Planificacion(String id) {
+    public Planificacion(int id) {
         this.id = id;
     }
 
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

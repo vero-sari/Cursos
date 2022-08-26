@@ -7,5 +7,5 @@ import com.example.Cursos.Models.Planificacion;
 
 @Repository
 public interface PlanificacionRepo extends JpaRepository<Planificacion,Long>{
-
+Planificacion findById(int id);
 }
