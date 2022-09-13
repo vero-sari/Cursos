@@ -12,15 +12,15 @@ import javax.annotation.Resource;
 
 import com.example.Cursos.Service.FileService;
 
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
-public class CursosApplication implements CommandLineRunner{
+@SpringBootApplication
+public class CursosApplication {
 	
-	@Resource
-	FileService fileService;
+/* 	@Resource
+	FileService fileService;*/
 	public static void main(String[] args) {
 		SpringApplication.run(CursosApplication.class, args);
 	}
-	@Override
+	/*@Override
 	public void run(String... arg) throws Exception{
 		fileService.deleteAll();
 		fileService.init();
@@ -35,6 +35,6 @@ public class CursosApplication implements CommandLineRunner{
 				registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST","PUT", "DELETE");
 			}
 		};
-	}
+	}*/
 
 }

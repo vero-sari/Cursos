@@ -46,7 +46,7 @@ public ResponseEntity<RespuestaGenerica> cursoById(@PathVariable int id){
     return new ResponseEntity<RespuestaGenerica>(respuesta, HttpStatus.OK);
 }
 
-@GetMapping("/ListaCursos")
+@GetMapping("/ListarCurso")
 public ResponseEntity<RespuestaGenerica> ListarCurso(){
     List<Planificacion> data = new ArrayList<>();
     RespuestaGenerica<Planificacion> respuesta = new RespuestaGenerica<>();

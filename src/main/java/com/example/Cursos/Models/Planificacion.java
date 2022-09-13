@@ -2,6 +2,7 @@ package com.example.Cursos.Models;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,7 @@ public class Planificacion {
     private Date fecha_fin;
     private String horario;
     private String estado;
+    @Column(columnDefinition="text", length=10485760)
     private String documento;
 
     public Planificacion() {
