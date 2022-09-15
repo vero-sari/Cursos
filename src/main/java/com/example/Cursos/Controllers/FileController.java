@@ -29,7 +29,7 @@ public class FileController {
     @Autowired
     FileService fileService;
 
-    @PostMapping("/subir")
+    @PostMapping("/upload")
     public ResponseEntity<FileMessage> uploadFiles(@RequestParam("files")MultipartFile[] files){
         String message = "";
         try{
@@ -43,7 +43,7 @@ public class FileController {
             message = "Se subieron los archivos correctamente " + fileNames;
             return ResponseEntity.status(HttpStatus.OK).body(new FileMessage(message));
         }catch (Exception e){
-            message = "Error al subir los archivos";
+            message = "Fallo al subir los archivos";
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new FileMessage(message));
         }
     }
@@ -61,8 +61,7 @@ public class FileController {
     }
 
 
-
-    @GetMapping("/archivo/{filename:.+}")
+    @GetMapping("/files/{filename:.+}")
     public ResponseEntity<Resource> getFile(@PathVariable String filename){
         Resource file = fileService.load(filename);
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
@@ -79,6 +78,4 @@ public class FileController {
 
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new FileMessage(message));
         }
-    }
-
 }
